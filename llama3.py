@@ -1,9 +1,7 @@
 import pandas as pd
 import streamlit as st
 import tempfile
-from dotenv import load_dotenv
 import os
-from langchain_google_genai import ChatGoogleGenerativeAI
 
 from langchain.prompts import PromptTemplate
 from langchain_community.chat_models import ChatOllama
@@ -11,7 +9,6 @@ from langchain_core.output_parsers import StrOutputParser
 
 
 def main():
-    # load_dotenv()
     st.set_page_config(page_title="Business Analyst Assistant")
     st.header("BizShifter Team")
 
@@ -23,7 +20,6 @@ def main():
         # st.write(uploaded_file.name)
 
         df = pd.read_csv(uploaded_file)
-#{df.sample(n=5).to_string()}
         context = f"""
             df:
             {df.sample(n=5).to_string()}
@@ -83,8 +79,6 @@ def main():
         if user_question:
             
             # load the model (llm)
-            # llm = ChatGoogleGenerativeAI(model = 'gemini-pro', google_api_key=os.getenv("GOOGLE_API_KEY"),
-            #                     temperature=0.7, convert_system_message_to_human=True)
             llm = ChatOllama(model="llama3")
             # get the response .  Invoke = it's simialr to .predit()
             response = llm.invoke(prompt_val)       
