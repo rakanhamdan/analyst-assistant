@@ -1,7 +1,7 @@
 # Business Analyst Assistant with Llama3
 
 This project was  uses the Llama3 8B large language model (LLM) to help business and data analysts understand their data by deriving insights from it. The model also suggests graphs and column relationships to use when building dashboards.
-It also optionally cleans the dataset for the user. The project leverages LangChain and Ollama to set up and run the model, and Streamlit to deploy it
+It also optionally cleans the dataset for the user. The project leverages LangChain and Ollama to set up and run the model, and Streamlit to upload the files and interact with the model.
 
 ## Overview
 
